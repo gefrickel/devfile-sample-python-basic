@@ -19,6 +19,9 @@ spec:
             - name: http
               containerPort: 8081
               protocol: TCP
+            - name: http
+              containerPort: 8888
+              protocol: TCP              
           resources:
             requests:
               memory: "50Mi"
@@ -34,5 +37,9 @@ ports:
     port: 8081
     protocol: TCP
     targetPort: 8081
+  - name: http-8888
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
 selector:
   app: python-app
