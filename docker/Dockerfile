@@ -2,6 +2,7 @@ FROM registry.access.redhat.com/ubi9/python-39:1-117.1684741281
 
 # By default, listen on port 8081
 EXPOSE 8081/tcp
+EXPOSE 8888/tcp
 ENV FLASK_PORT=8081
 
 # Set the working directory in the container
@@ -17,6 +18,8 @@ RUN \
   elif [ `ls -1q *.txt | wc -l` == 1 ]; \
     then pip install -r *.txt; \
   fi
+  
+RUN pip install jupyterlab notebook
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
