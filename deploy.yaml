@@ -16,10 +16,10 @@ spec:
         - name: my-python
           image: python-image:latest
           ports:
-            - name: http
+            - name: http-8081
               containerPort: 8081
               protocol: TCP
-            - name: http
+            - name: http-8888
               containerPort: 8888
               protocol: TCP              
           resources:
